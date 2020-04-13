@@ -30,7 +30,7 @@ jobs:
         - ./gradlew clean :applications:${APPLICATION}-server-vincentp:build
       before_deploy:
         - git config --local user.name "privincent"
-          - git config --local user.email "privincent@gmail.com"
+        - git config --local user.email "privincent@gmail.com"
         - git tag -f $RELEASE_TAG
       deploy: &github
         provider: releases
