@@ -1,6 +1,6 @@
 applications:
 - name: tracker-registration-vincentp
-  path: ./applications/registration-server/build/libs/registration-server-vincentp.jar
+  path: ./applications/registration-server-vincentp/build/libs/registration-server-vincentp.jar
   routes:
   - route: registration-pal-vincentp.cfapps.io
   memory: 1G

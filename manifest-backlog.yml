@@ -1,6 +1,6 @@
 applications:
 - name: tracker-backlog-vincentp
-  path: ./applications/backlog-server/build/libs/backlog-server-vincentp.jar
+  path: ./applications/backlog-serve-vincentpr/build/libs/backlog-server-vincentp.jar
   routes:
   - route: backlog-pal-vincentp.cfapps.io
   memory: 1G

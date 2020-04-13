@@ -1,6 +1,6 @@
 applications:
 - name: tracker-allocations-vincentp
-  path: ./applications/allocations-server/build/libs/allocations-server-vincentp.jar
+  path: ./applications/allocations-server-vincentp/build/libs/allocations-server-vincentp.jar
   routes:
   - route: allocations-pal-vincentp.cfapps.io
   memory: 1G

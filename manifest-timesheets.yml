@@ -1,6 +1,6 @@
 applications:
 - name: tracker-timesheets-vincentp
-  path: ./applications/timesheets-server/build/libs/timesheets-server-vincentp.jar
+  path: ./applications/timesheets-server-vincentp/build/libs/timesheets-server-vincentp.jar
   routes:
   - route: timesheets-pal-vincentp.cfapps.io
   memory: 1G
