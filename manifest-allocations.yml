@@ -12,4 +12,4 @@ applications:
   - tracker-allocations-database-vincentp
   - tracker-service-registry
   - tracker-circuit-breaker-dashboard
-  - tracker-sso
+  - tracker-sso-vincentp
