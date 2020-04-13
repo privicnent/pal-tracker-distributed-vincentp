@@ -1,9 +1,9 @@
-rootProject.name = "pal-tracker-distributed"
+rootProject.name = "pal-tracker-distributed-vincentp"
 
-include "applications:allocations-server"
-include "applications:backlog-server"
-include "applications:registration-server"
-include "applications:timesheets-server"
+include "applications:allocations-server-vincentp"
+include "applications:backlog-server-vincentp"
+include "applications:registration-server-vincentp"
+include "applications:timesheets-server-vincentp"
 
 include "components:accounts"
 include "components:allocations"
