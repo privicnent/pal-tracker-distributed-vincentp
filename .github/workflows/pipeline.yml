@@ -24,23 +24,23 @@ jobs:
       - name: Publish allocations artifact
         uses: actions/upload-artifact@v1
         with:
-          name: pal-tracker-distributed
-          path: applications/allocations-server/build/libs/allocations-server.jar
+          name: pal-tracker-distributed-vincentp
+          path: applications/allocations-server-vincentp/build/libs/allocations-server-vincentp.jar
       - name: Publish backlog artifact
         uses: actions/upload-artifact@v1
         with:
-          name: pal-tracker-distributed
-          path: applications/backlog-server/build/libs/backlog-server.jar
+          name: pal-tracker-distributed-vincentp
+          path: applications/backlog-server-vincentp/build/libs/backlog-server-vincentp.jar
       - name: Publish registration artifact
         uses: actions/upload-artifact@v1
         with:
-          name: pal-tracker-distributed
-          path: applications/registration-server/build/libs/registration-server.jar
+          name: pal-tracker-distributed-vincentp
+          path: applications/registration-server-vincentp/build/libs/registration-server-vincentp.jar
       - name: Publish timesheets artifact
         uses: actions/upload-artifact@v1
         with:
-          name: pal-tracker-distributed
-          path: applications/timesheets-server/build/libs/timesheets-server.jar
+          name: pal-tracker-distributed-vincentp
+          path: applications/timesheets-server-vincentp/build/libs/timesheets-server-vincentp.jar
 
   deploy-allocations:
     needs: build-and-publish
@@ -56,13 +56,13 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v1
         with:
-          name: pal-tracker-distributed
+          name: pal-tracker-distributed-vincentp
       - name: Deploy to cf
         run: |
           cf api "$CF_API_URL"
           cf auth
           cf target -o "$CF_ORG" -s "$CF_SPACE"
-          cf push -f ./manifest-allocations.yml -p ./pal-tracker-distributed/allocations-server.jar
+          cf push -f ./manifest-allocations.yml -p ./pal-tracker-distributed-vincentp/allocations-server-vincentp.jar
         env:
           CF_API_URL: ${{ secrets.CF_API_URL }}
           CF_ORG: ${{ secrets.CF_ORG }}
@@ -84,13 +84,13 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v1
         with:
-          name: pal-tracker-distributed
+          name: pal-tracker-distributed-vincentp
       - name: Deploy to cf
         run: |
           cf api "$CF_API_URL"
           cf auth
           cf target -o "$CF_ORG" -s "$CF_SPACE"
-          cf push -f ./manifest-backlog.yml -p ./pal-tracker-distributed/backlog-server.jar
+          cf push -f ./manifest-backlog.yml -p ./pal-tracker-distributed-vincentp/backlog-server-vincentp.jar
         env:
           CF_API_URL: ${{ secrets.CF_API_URL }}
           CF_ORG: ${{ secrets.CF_ORG }}
@@ -112,13 +112,13 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v1
         with:
-          name: pal-tracker-distributed
+          name: pal-tracker-distributed-vincentp
       - name: Deploy to cf
         run: |
           cf api "$CF_API_URL"
           cf auth
           cf target -o "$CF_ORG" -s "$CF_SPACE"
-          cf push -f ./manifest-registration.yml -p ./pal-tracker-distributed/registration-server.jar
+          cf push -f ./manifest-registration.yml -p ./pal-tracker-distributed-vincentp/registration-server-vincentp.jar
         env:
           CF_API_URL: ${{ secrets.CF_API_URL }}
           CF_ORG: ${{ secrets.CF_ORG }}
@@ -140,13 +140,13 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v1
         with:
-          name: pal-tracker-distributed
+          name: pal-tracker-distributed-vincentp
       - name: Deploy to cf
         run: |
           cf api "$CF_API_URL"
           cf auth
           cf target -o "$CF_ORG" -s "$CF_SPACE"
-          cf push -f ./manifest-timesheets.yml -p ./pal-tracker-distributed/timesheets-server.jar
+          cf push -f ./manifest-timesheets.yml -p ./pal-tracker-distributed-vincentp/timesheets-server-vincentp.jar
         env:
           CF_API_URL: ${{ secrets.CF_API_URL }}
           CF_ORG: ${{ secrets.CF_ORG }}
@@ -169,7 +169,7 @@ jobs:
           echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
           sudo apt-get update
           sudo apt-get install cf-cli
-      - name: Migate tracker-database
+      - name: Migate tracker-database-vincentp
         run: |
           cf api "$CF_API_URL"
           cf auth
